@@ -5,8 +5,8 @@ using Twity.DataModels.Responses;
 
 public class GetTweet : MonoBehaviour {
     public static string Tweet;
-    private string[] word = new string[] {"が","の","を","く","ん"};
-    int w = 1;
+    private string[] word = new string[] {"政治"};
+    int w = 0;
     void Start () {
         Twity.Oauth.consumerKey       = "sa8ZnjENATdmEVIgXUpZlo9N1";
         Twity.Oauth.consumerSecret    = "IGvZ5wXPnb9fCqt4yftBli95XwFckppeezjF1oXgnOShPj1m8d";
