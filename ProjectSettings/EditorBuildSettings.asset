@@ -5,10 +5,16 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Sample.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/Scenes/Satou.unity
     guid: 1b1872351a8a35f4daa54b3ba6e1853a
+  - enabled: 1
+    path: Assets/Scenes/Result.unity
+    guid: b4803612e848540419b5bd37d156fea9
+  - enabled: 1
+    path: Assets/Scenes/Game.unity
+    guid: d31e2e24988a08345af50f929b8e6495
   m_configObjects: {}
