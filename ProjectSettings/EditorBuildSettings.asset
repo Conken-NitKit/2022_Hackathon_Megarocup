@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Sample.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Satou.unity
+    guid: 1b1872351a8a35f4daa54b3ba6e1853a
   m_configObjects: {}
