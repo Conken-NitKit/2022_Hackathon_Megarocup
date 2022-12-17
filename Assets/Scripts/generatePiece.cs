@@ -43,34 +43,41 @@ public class generatePiece : MonoBehaviour
 
     void OnEnable()
     {
-        tweet = GetTweet.Tweet;
-        pieceNumber = tweet.Length / pieceSize;
-        remainCharNumber = tweet.Length % pieceSize;
-       if(remainCharNumber !=0)
-        {
-            pieceNumber++;
-            for(int i = remainCharNumber;i < pieceSize;i++)
-            {
-                tweet += " ";
-            }
-        }
-
-        for(int i = 0;i < pieceNumber;i++)
-        {
-            generatePositions[i] = new Vector2(generatePositionX + transferVolumeX*(i % 3),generatePositionY + transferVolumeY * (i/3));
-        }
-
-        for(int i = 0;i < pieceNumber;i++)
-        {
-            int randomIndex = Random.Range(0, generatePositions.Count);
-            pieces.Add(Instantiate(piece,generatePositions[randomIndex],Quaternion.identity));
-            pieceCanvas = pieces[i].GetComponent<Transform>().transform.GetChild(0).gameObject;
-            pieceText = pieceCanvas.GetComponent<Transform>().transform.GetChild(0).gameObject;
-            partTweet = tweet.Substring(nextStringCount,pieceSize);
-            pieceText.GetComponent<Text>().text = partTweet;
-            nextStringCount += pieceSize;
-            generatePositions.RemoveAt(randomIndex);
-        }
+        StartCoroutine(Generate());
 
     }
+
+        IEnumerator Generate()
+        {
+            yield return new WaitForSeconds(0.1f);
+            tweet = GetTweet.Tweet;
+            pieceNumber = tweet.Length / pieceSize;
+            remainCharNumber = tweet.Length % pieceSize;
+            if(remainCharNumber !=0)
+            {
+                pieceNumber++;
+                for(int i = remainCharNumber;i < pieceSize;i++)
+                {
+                    tweet += " ";
+                }
+            }
+
+            for(int i = 0;i < pieceNumber;i++)
+            {
+                generatePositions.Add(new Vector2(generatePositionX + transferVolumeX*(i % 3),generatePositionY + transferVolumeY * (i/3)));
+            }
+
+            for(int i = 0;i < pieceNumber;i++)
+            {
+                int randomIndex = Random.Range(0, generatePositions.Count);
+                pieces.Add(Instantiate(piece,generatePositions[randomIndex],Quaternion.identity));
+                pieceCanvas = pieces[i].GetComponent<Transform>().transform.GetChild(0).gameObject;
+                pieceText = pieceCanvas.GetComponent<Transform>().transform.GetChild(0).gameObject;
+                partTweet = tweet.Substring(nextStringCount,pieceSize);
+                pieceText.GetComponent<Text>().text = partTweet;
+                nextStringCount += pieceSize;
+                generatePositions.RemoveAt(randomIndex);
+            }
+        }
+    
 }
