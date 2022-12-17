@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: d82ab7f948cd118409b23862362da007
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - 01FLOPDESIGN
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 717ddbd16d6f6804c9ba28f0b39b8f94, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
