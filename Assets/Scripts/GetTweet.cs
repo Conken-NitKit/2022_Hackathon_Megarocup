@@ -7,7 +7,8 @@ public class GetTweet : MonoBehaviour {
     public static string Tweet;
     private string[] word = new string[] {"政治"};
     int w = 0;
-    void Start () {
+    void Start () 
+    {
         Twity.Oauth.consumerKey       = "sa8ZnjENATdmEVIgXUpZlo9N1";
         Twity.Oauth.consumerSecret    = "IGvZ5wXPnb9fCqt4yftBli95XwFckppeezjF1oXgnOShPj1m8d";
         Twity.Oauth.accessToken       = "1208376401134407680-H8jSCykAstsIcemk8b0pGfTkOdvm8o";
@@ -21,7 +22,8 @@ public class GetTweet : MonoBehaviour {
     }
 
     void Callback(bool success, string response) {
-        if (success) {
+        if (success) 
+        {
             SearchTweetsResponse Response = JsonUtility.FromJson<SearchTweetsResponse>(response);
             for(int i = 0;i <Response.statuses.Length;i++){
                 string text = Response.statuses[i].text;

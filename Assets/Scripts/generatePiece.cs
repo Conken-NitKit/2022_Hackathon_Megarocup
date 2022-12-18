@@ -8,6 +8,7 @@ public class generatePiece : MonoBehaviour
     //ピースのプレハブ
     [SerializeField]
     private GameObject piece;
+    
     //１ピース当たりの文字数
     [SerializeField]
     private int pieceSize;
@@ -61,6 +62,7 @@ public class generatePiece : MonoBehaviour
                     tweet += " ";
                 }
             }
+            GoResult.PieceMax = pieceNumber;
 
             for(int i = 0;i < pieceNumber;i++)
             {
