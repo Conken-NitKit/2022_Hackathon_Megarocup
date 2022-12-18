@@ -70,11 +70,13 @@ public class generatePiece : MonoBehaviour
             }
 
         }
+        GoResult.PieceMax = pieceNumber;
 
         for(int i = 0;i < pieceNumber;i++)
         {
             generatePositions.Add(new Vector2(generatePositionX + transferVolumeX*(i % 3),generatePositionY + transferVolumeY * (i/3)));
         }
+
 
         for(int i = 0;i < pieceNumber;i++)
         {
@@ -89,4 +91,5 @@ public class generatePiece : MonoBehaviour
             generatePositions.RemoveAt(randomIndex);
         }
     }   
+
 }
