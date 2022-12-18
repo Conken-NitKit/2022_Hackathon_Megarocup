@@ -30,12 +30,18 @@ public class GetTweet : MonoBehaviour {
         if (success) 
         {
             SearchTweetsResponse Response = JsonUtility.FromJson<SearchTweetsResponse>(response);
-            for(int i = 0;i <Response.statuses.Length;i++){
-                string text = Response.statuses[i].text;
+            
+            for(int j = 0;j < 100;j++){
+                if(j >= Response.statuses.Length)
+                {
+                    break;
+                }
+                string text = Response.statuses[j].text;
                 Tweet = text;
                 Debug.Log(Tweet);
                 pieceGenerater.SetActive(true);
             }
+            
         } else {
             Debug.Log(response);
         }

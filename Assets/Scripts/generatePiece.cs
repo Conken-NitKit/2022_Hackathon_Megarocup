@@ -45,24 +45,23 @@ public class generatePiece : MonoBehaviour
     private string tweet;
 
     //ピースの個数
-    int pieceNumber;
+    int pieceNumber = -1;
     //余った文字の数
     int remainCharNumber;
 
     void Start()
     {
         tweet = GetTweet.Tweet;
-        tweet.Replace("\r"," ").Replace("\n"," ");
+        tweet = tweet.Replace("\r"," ").Replace("\n"," ");
         pieceNumber = tweet.Length / pieceSize;
         remainCharNumber = tweet.Length % pieceSize;
         if(remainCharNumber !=0)
         {
-            pieceNumber++;
             for(int i = remainCharNumber;i < pieceSize;i++)
             {
                 tweet += " ";
             }
-
+            
         }
         GoResult.PieceMax = pieceNumber;
 
