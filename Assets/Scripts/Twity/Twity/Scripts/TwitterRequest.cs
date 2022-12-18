@@ -131,7 +131,10 @@ namespace Twity
                     yield return request.SendWebRequest();
             #endif
 
-            if (request.isNetworkError) callback(false);
+            if (request.isNetworkError)
+            {
+                callback(false);
+            }
 
             if (request.responseCode == 200 || request.responseCode == 201)
             {
