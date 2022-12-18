@@ -13,9 +13,15 @@ public class ResultTime : MonoBehaviour
     [SerializeField]
     private Text ResultPieceText;
 
-    void start()
+    void Start()
     {
-        ResultTimeText.text =$"記録 {GoResult.min}:{GoResult.seconds}";
+        Drag.ClearPiece = 0;
+    }
+
+    void Update()
+    {
+        
+        ResultTimeText.text =$"記録 {GoResult.min}:{GoResult.seconds/10}{GoResult.seconds%10}";
         ResultPieceText.text =$"×{GoResult.PieceMax}";
     }
 }
