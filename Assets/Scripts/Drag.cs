@@ -9,18 +9,18 @@ public class Drag : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
     public static int ClearPiece;
 
     [SerializeField]
-    private Vector2 offset = new Vector2(30,10);
+    private Vector2 offset = new Vector2(1f,0.31f);
     
     private Vector2[] PiecePos = new Vector2[28];
 
     [SerializeField]
-    private float posX;
+    private float posX = -5.85f;
     [SerializeField]
-    private float posY;
+    private float posY = 2.47f;
     [SerializeField]
-    private float posfarX;
+    private float posfarX = 2f;
     [SerializeField]
-    private float posfarY;
+    private float posfarY = 0.62f;
 	// Use this for initialization
 	void Start () 
     {

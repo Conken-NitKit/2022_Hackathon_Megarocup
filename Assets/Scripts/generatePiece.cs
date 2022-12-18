@@ -11,6 +11,7 @@ public class generatePiece : MonoBehaviour
     //ピースのプレハブ
     [SerializeField]
     private GameObject piece;
+    
     //１ピース当たりの文字数
     [SerializeField]
     private int pieceSize;
@@ -67,6 +68,7 @@ public class generatePiece : MonoBehaviour
             {
                 tweet += " ";
             }
+
         }
 
         for(int i = 0;i < pieceNumber;i++)
