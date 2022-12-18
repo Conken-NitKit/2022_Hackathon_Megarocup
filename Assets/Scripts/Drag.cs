@@ -25,6 +25,7 @@ public class Drag : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
 	void Start () 
     {
         Clear = false;
+        
         for(int i=0;i<28;i++)
         {
             PiecePos[i] = new Vector2(posX + posfarX*(i%3) , posY - posfarY*(i/3));

@@ -49,16 +49,10 @@ public class generatePiece : MonoBehaviour
     //余った文字の数
     int remainCharNumber;
 
-    void OnEnable()
+    void Start()
     {
-        StartCoroutine(Generate());
-
-    }
-
-    IEnumerator Generate()
-    {
-        yield return new WaitForSeconds(0.1f);
         tweet = GetTweet.Tweet;
+        tweet.Replace("\r"," ").Replace("\n"," ");
         pieceNumber = tweet.Length / pieceSize;
         remainCharNumber = tweet.Length % pieceSize;
         if(remainCharNumber !=0)
@@ -74,7 +68,7 @@ public class generatePiece : MonoBehaviour
 
         for(int i = 0;i < pieceNumber;i++)
         {
-            generatePositions.Add(new Vector2(generatePositionX + transferVolumeX*(i % 3),generatePositionY + transferVolumeY * (i/3)));
+            generatePositions.Add(new Vector2(generatePositionX + transferVolumeX*(i % 3),generatePositionY - transferVolumeY * (i/3)));
         }
 
 
@@ -90,6 +84,6 @@ public class generatePiece : MonoBehaviour
             nextStringCount += pieceSize;
             generatePositions.RemoveAt(randomIndex);
         }
-    }   
 
+    }
 }

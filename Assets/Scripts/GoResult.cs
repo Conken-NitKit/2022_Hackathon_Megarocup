@@ -12,6 +12,9 @@ public class GoResult : MonoBehaviour
     [SerializeField]
     private Text timerText;
 
+    [SerializeField]
+    private Text pieceText;
+
     //経過時間 
     public float totalTime;
 
@@ -35,14 +38,15 @@ public class GoResult : MonoBehaviour
         seconds = (int)totalTime;
         if(seconds>=60)
         {
-            seconds = 0;
+            totalTime = 0f;
             min++; 
         }
-		timerText.text = $"{min}:{seconds}";
+		timerText.text = $"{min}:{seconds/10}{seconds%10}";
+        pieceText.text = $"{Drag.ClearPiece}/{PieceMax}";
 
         if(Drag.ClearPiece >= PieceMax)
         {
-            Time.timeScale = 0;
+        
             SceneManager.LoadScene("Result");
 
         }
